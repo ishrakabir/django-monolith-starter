@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  app:
+    build: 
+      context: .
+      args:
+        - DEV=true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+     sh -c "python manage.py runserver 0.0.0.0:8000"
+
+
+#  এক লাইনে পুরো ফাইল কী করছে?
+
+# Dockerfile দিয়ে image বানাচ্ছে
+
+# Port expose করছে
+
+# Local code mount করছে
+
+# Django development server চালাচ্ছে
+
+# গুরুত্বপূর্ণ Developer Note 🔥
+
+# এটা শুধু development setup।
+
+# Production এ:
+
+# runserver ব্যবহার করা হয় না
+
+# gunicorn ব্যবহার হয়
+
+# nginx লাগে
+
+# debug off থাকে
